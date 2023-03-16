@@ -19,6 +19,7 @@ $(document).ready(function ($) {
 $(window).on('load', function () {
 	updateSizes();
 	loadFunc();
+	modal();
 });
 
 $(window).on('resize', function () {
@@ -129,76 +130,6 @@ $(document).ready(function() {
 
 
 
-// const btnSubmit = document.querySelectorAll('button[type="submit"]')
-// Array.from(btnSubmit).map((item) => {
-// 	item.addEventListener('click', (e) => {
-// 		e.preventDefault();
-// 		succes('.succes')
-// 	})
-// })
-
-
-// function allDefautAnim(bottom = false, start = '-=30% center', end = 'bottom') {
-// 	const paralaxWrapper = Array.from(document.querySelectorAll('.sec_anim')).map(function(el) {
-// 		const arr = Array.from(el.querySelectorAll('.el_anim')).map(function (item, index) {
-// 			const tl = gsap.timeline();
-// 			ScrollTrigger.create({
-// 				animation: tl,
-// 				trigger: el,
-// 				start: start,
-// 				end: end,
-// 				ease: 'none',
-// 			})
-// 			tl.fromTo(item, {
-// 				y: 100, 
-// 				duration: .4,
-// 				autoAlpha: 0,
-// 			}, {
-// 				y: 0,
-// 				autoAlpha: 1,
-// 				delay: 0.1 + (0.1 * index),
-// 			});
-// 		});
-// 	});
-// }
-
-// function popupForms(pr) {
-
-// 	let popupForms = document.querySelector('.callback')
-// 	let popupFormsTrigger = document.querySelectorAll('.btn_popup')
-// 	let popupFormsClose = document.querySelectorAll('.remove_popup')
-// 	let popupFormsSubmit = popupForms.querySelector('button[type="submit"]')
-// 	const burgerPopup = document.querySelector('.burger')
-	
-// 	Array.from(popupFormsTrigger).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.add('active');
-// 			win.style.overflow = "hidden";
-// 			win.style.paddingRight = pr; 
-// 			burgerPopup.classList.remove('active')
-// 		})
-// 	})
-
-
-// 	Array.from(popupFormsClose).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.remove('active')
-// 			win.style.overflow = "";
-// 			win.style.paddingRight = ""; 
-// 		})
-// 	})
-
-// 	popupFormsSubmit.addEventListener('click', () => {
-// 		popupForms.classList.remove('active')
-// 		win.style.overflow = "";
-// 		win.style.paddingRight = ""; 
-// 		succes('.succes')
-// 	})
-// }
-
-
-
-
 
 
 
@@ -213,41 +144,123 @@ $(document).ready(function()  {
 })
 
 
+const swiper = new Swiper('.swiper', {
+	breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+			freeMode: false,
+    },
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+			freeMode: false,
+    },
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 50
+    },
+		1024: {
+			slidesPerView: 4,
+      spaceBetween: 50
+		}
+	},
+	navigation: {
+    nextEl: '.personal_slider_btn_next',
+    prevEl: '.personal_slider_btn_prewios',
+  },
+	pagination: {
+    el: '.swiper_pagination',
+    type: 'bullets',
+  },
+});
 
-async function maps(street, city, size) {
+const swiperRev = new Swiper('.swiper-reviews ', {
+	breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+			freeMode: false,
+    },
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+			freeMode: false,
+    },
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 50
+    },
+		1024: {
+			slidesPerView: 1,
+      spaceBetween: 50
+		}
+	},
+	navigation: {
+    nextEl: '.reviews_slider_btn_next',
+    prevEl: '.reviews_slider_btn_prewios',
+  },
+	pagination: {
+    el: '.swiper_pagination',
+    type: 'bullets',
+  },
+});
 
-	function init() {
-		const geocoder = ymaps.geocode(`${street} ${city}`);
-		geocoder.then(
-			async function (res) {
-				var myMapMobile = await new ymaps.Map('map', {
-						center: res.geoObjects.get(0).geometry.getCoordinates(),
-						zoom: 16,
-					}, {
-						searchControlProvider: 'yandex#search'
-					}),
-					myPlacemark = new ymaps.Placemark(myMapMobile.getCenter(), {
-						balloonContent: `${street} ${city}`
-					}, {
-						iconLayout: 'default#image',
-						iconImageHref: '/i/global/map.svg',
-						iconImageSize: size,
-						iconImageOffset: [-5, -38]
-					});
 
-				myMapMobile.geoObjects
-					.add(myPlacemark)
-				myMapMobile.behaviors.disable('scrollZoom')
-			}
-		);
-	}
-	await ymaps.ready(init);
 
+function succes(success) {
+	$(success).toggleClass('active');
+		setTimeout(function() {
+			$(success).removeClass('active')
+		}, 3000)
+}
+
+function failed(failed) {
+	$(failed).toggleClass('active');
+		setTimeout(function() {
+			$(failed).removeClass('active')
+		}, 3000)
 }
 
 
 
+function modal() {
+	let popup = document.querySelectorAll('.popup')
+	let btnArray = document.querySelectorAll('.trigger')
+	
+	btnArray.forEach((el) => {
+		el.addEventListener('click', function(e) {
+			e.preventDefault();
+			let path = e.currentTarget.dataset.target
+			
+			popup.forEach((el) => {
+				if(el.dataset.id == path) {
+					isOpen(el)
+				}
+			})			
+		})
+	})
+	
 
+	popup.forEach((pop) => {
+		let remove = pop.querySelectorAll('.remove')
+		remove.forEach(el => {
+			el.addEventListener('click', (e) => {
+				isRemove(pop);
+			})
+		});
+	})
+}
+
+function isOpen(popup) {
+	document.body.classList.add('fixed')
+	popup.classList.add('active')
+}
+
+function isRemove(popup) {
+	popup.classList.remove('active')
+	document.body.classList.remove('fixed')
+}
 
 
 

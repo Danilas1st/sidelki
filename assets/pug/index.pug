@@ -3,5 +3,192 @@ extends _layout
 block vars
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'HOME'}
 block content_block
-	section.
-	
+	section.hero 
+		.section_in 
+			.hero_main
+				.hero_main_txt
+					p CООБЩЕСТВО “ВАЛЕНТИНА”
+					h1 Оказываем услуги сиделок для ухода за лежачими больными и пожилыми людьм
+				.hero_main_btn 
+					button(type="button") Оставить заявку
+	section.company 
+		.section_in 
+			.company_main 
+				.company_head 
+					h2 О компании
+				.company_info 
+					.company_txt 
+						p Оказываем людям услуги квалифицированной сиделки, постоянно повышая уровень сервиса, учитывая пожелания клиента. К каждому клиенту - <span>индивидуальный подход.</span>  В каждом отдельном случае чья-то судьба, жизнь человека и его близких, поэтому мы стараемся найти нестандартные решения для наших клиентов и подопечных. Мы помогаем и поддерживаем друг друга. От каждого из нас зависит результат общего дела.
+						h4 Сообщество - это не агентство!
+						p Мы люди, объединенные общим делом и готовые в любой момент подменить друг друга для того, чтобы интересы заказчика были выполнены. Готовы помочь Вам!
+					.company_img 
+						img(src="i/galery/companyImg.png", alt="")
+				.company_bottom 
+					ul 
+						li
+							.company_bottom_img 
+								img(src="i/doctor.svg", alt="")
+							p Воспитанный персонал <br>без вредных привычек
+						li
+							.company_bottom_img  
+								img(src="i/healthcare.svg", alt="")
+							p Сиделки с большим опытом работы
+						li 
+							.company_bottom_img 
+								img(src="i/pharmacy.svg", alt="")
+							p Есть сотрудники <br>с медицинским образованием
+						li
+							.company_bottom_img  
+								img(src="i/wheelchair.svg", alt="")
+							p Специализируемся на <br>тяжелых заболевания
+						li 
+							.company_bottom_img 
+								img(src="i/run.svg", alt="")
+							p Выполняем срочные заказы
+						li 
+							.company_bottom_img 
+								img(src="i/map.svg", alt="")
+							p Мы работаем по Краснодару <br>и Краснодарскому краю
+	section.responsibility
+		.section_in 
+			.responsibility_main
+				.responsibility_left 
+					h2 Сиделки/помощницы по дому возьмут на себя обязанности выполнения:
+					ul 
+						li 
+							+icon('double-arrow-right1')
+							p Гигиенических процедур;
+						li 
+							+icon('double-arrow-right1')
+							p Профилактике и лечение пролежней;
+						li 
+							+icon('double-arrow-right1')
+							p Контроль приёма лекарств;
+						li 
+							+icon('double-arrow-right1')
+							p Медицинские процедуры (в/м уколы, обработка ран, др.)
+						li 
+							+icon('double-arrow-right1')
+							p Сопровождение, уход и присмотр за подопечным;
+						li 
+							+icon('double-arrow-right1')
+							p Приготовление и прием пищи, закупка продуктов
+						li 
+							+icon('double-arrow-right1')
+							p Помощь по хозяйству, сухая и влажная уборка, др.
+				.responsibility_right 
+					img(src="i/galery/galery2.png", alt="")
+					img(src="i/galery/galery3.png", alt="")
+	section.price
+		.section_in 
+			.price_main 
+				.price_head 
+					h2 Оценим стоимость услуги индивидуально для вас
+				.price_form_w
+					form.price_form
+						.price_form_input
+							input(type="text" placeholder="Имя")
+						.price_form_input
+							input(type="tel" placeholder="+7 (___) ___-__-__")
+						.pricr_form_btn 
+							button(type='submit') Отправить заявку
+				.price_policy!='Отправляя форму, вы соглашаетесь на обработку персональных данных и принимаете <a href="#"> политику конфиденциальности</a>'
+	section.personal 
+		.section_in 
+			.personal_main
+				.peronal_head
+					h2 Наши сотрудники
+				.personal_slider_w
+					.personal_slider.swiper  
+						.swiper-wrapper
+							-for(i = 0; i < 10; i++)
+								.swiper-slide 
+									.personal_slide_img
+										img(src="i/galery/helga.png", alt="")
+									.personal_slide_txt 
+										p Ольга Николаевна
+										span 1967 г, стаж 4 года
+						.swiper_pagination 
+				.personal_slider_nav 
+					.personal_slider_btn_prewios 
+						button(type="button")
+							+icon('previous')
+					.personal_slider_btn_next 
+						button(type="button")
+							+icon('next')
+	section.live-now
+		.section_in 
+			.live-now_main_w
+				.live-now_head 
+					h2 Сотрудничество с фондом <span>“Живи сейчас”</span>
+				.live-now_main
+					.live-now_left
+						.live-now_left_top 
+							.live-now_left_top_txt
+								p Мы сотрудничаем с благотворительным фондом «Живи сейчас».
+								span Они предоставляют бесплатные места для размещения тяжелобольных и обучают наших сиделок. Прохождение курсов от фонда позволяет узнать больше о уходе за людьми, у которых серьёзные проблемы со здоровьем.
+						.live-now_left_bottom 
+							h3 Что можно узнать на таком обучении:
+							.live-now_left_bottom_txt
+								.live-now_icon
+									+icon('double-arrow-right2')
+								p Как правильно оказывать помощь тяжелобольному. Перемещать и поднимать обездвиженного человека. Как осторожно мыть и кормить его.
+							.live-now_left_bottom_txt
+								.live-now_icon
+									+icon('double-arrow-right2')
+								p Как использовать средства альтернативной коммуникации. Что нужно, чтобы эффективно ухаживать за различными стомами и катетерами, предупреждать появление пролежней и контрактур, ухаживать за повреждениями кожного покрова.
+					.live-now_right
+						img(src="i/galery/liveNow.png", alt="")
+	section.reviews
+		.section_in 
+			.reviews_main 
+				.reviews_head
+					h2 Отзывы клиентов
+				.reviews_slider_w
+					.reviews_slider.swiper-reviews
+						.swiper-wrapper
+							-for(i = 0; i < 6; i++)
+								.swiper-slide.swiper_reviews 
+									.reviews_slide_img
+										img(src="i/reviews/reviews1.png", alt="")
+									.reviews_slide_txt 
+										p “Благодарю Ирину Викторовну, за то, что направила мне хорошую, заботливую сиделку Елену. Я ею очень довольна.
+										p Она добросовестно выполняет рекомендации врача, имея опыт с людьми перенесшими инсульт, старается проводить упражнения, гулять и выполнять манипуляции, которые помогают востановить прежнии функции. Я живу на севере, близких рядом нет, которые могли бы помочь в нашей ситуции, поэтому Елена стала нам почти родным человеком, с душой относится к моей маме. Большое спасибо сообществу сиделок "Валентина". Рекомендую...”
+										h4 Ирина Саноян
+						.swiper_pagination 
+				.reviews_slider_nav 
+					.reviews_slider_btn_prewios 
+						button(type="button")
+							+icon('previous')
+					.reviews_slider_btn_next 
+						button(type="button")
+							+icon('next')
+	section.contact 
+		.section_in 
+			.contact_main 
+				.contact_main_left 
+					.contact_head
+						h2 Контакты:
+					.contact_mobil 
+						+icon('call')
+						p Телефон:
+						a(href="#")
+							span +7-918-114-41-75
+					.contact_mail 
+						+icon('mail')
+						p Электронная почта:
+						a(href="#")
+							span mail@mail.ru
+					.contact_whatsapp 
+						a(href="#")
+							+icon('whatsapp')
+							p WhatsApp
+				.contact_main_right 
+					.contact_main_img 
+						img(src="i/galery/contactImg.png", alt="")
+				
+
+
+
+
+

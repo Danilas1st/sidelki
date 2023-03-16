@@ -18,10 +18,10 @@ h1 {
 h2, h3, h4, h5, h6 {
 	font-size: 2.4rem;
 	font-family: $font_3;
-	color: $dark;
+	color: $blue;
 	font-weight: 500;
 	@include bp($point_2) {
-		font-size: 2remrem;
+		font-size: 2rem;
 	}
 }
 
