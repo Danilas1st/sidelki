@@ -134,6 +134,9 @@
 		color: $blue;
 		font-family: $font_2;
 		font-size: 1.6rem;
+		@include bp($point_5) {
+			width: 69%;
+		}
 	}
 	@include bp($point_2) {
 		ul {
@@ -231,30 +234,40 @@
 	justify-content: center;
 	margin-bottom: 5rem;
 }
+.price_form_main {
+	display: flex;
+	@include bp($point_2) {
+		flex-direction: column;
+		align-items: center;
+	}
+}
 .price_form {
 	display: flex;
 	align-items: center;
 	@include bp($point_5) {
 		flex-direction: column;
-		align-items: flex-start
 	}
 }
 .price_form_input {
 	input {
+		margin-right: 3rem;
 		@include app;
 		background: $white;
 		padding: 2.7rem;
 		border-radius: 1rem;
-		margin-right: 3rem;
+	}
+	@include bp($point_2) {
+		input {
+			margin: 0 2rem 2rem 0;
+		}
 	}
 	@include bp($point_5) {
-		margin: 0 0 1rem 0;
 		input {
-			margin: 0;
+			margin: 0 0 1rem 0;
 		}
 	}
 }
-.pricr_form_btn {
+.price_form_btn {
 	button {
 		background: $orange;
 		color: $white;
@@ -499,6 +512,9 @@
 }
 .reviews_slide_img {
 	margin-right: 6.8rem;
+	@include bp($point_2) {
+		display: none;
+	}
 	@include bp($point_5) {
 		display: none;
 	}
@@ -545,6 +561,12 @@
 		padding: .5rem .8rem;
 	}
 }
+.swiper-button-disabled {
+	button {
+		color: $orange;
+		border: .1rem solid $orange !important;
+	}
+}
 .contact {
 	background: $lightblue;
 }
@@ -554,7 +576,7 @@
 	position: relative;
 }
 .contact_main_left {
-	padding: 7.54rem 0;
+	padding: 9.4rem 0;
 	@include bp($point_2) {
 		padding: 6rem 0;
 	}
@@ -580,6 +602,7 @@
 		color: $orange;
 	}
 	a {
+		font-family: $font_2;
 		&:hover {
 			transform: scale(1.1);
 			transition: all .3s;
@@ -599,6 +622,7 @@
 		color: $orange;
 	}
 	a {
+		font-family: $font_2;
 		&:hover {
 			transform: scale(1.1);
 			transition: all .3s;

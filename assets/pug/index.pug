@@ -8,7 +8,7 @@ block content_block
 			.hero_main
 				.hero_main_txt
 					p CООБЩЕСТВО “ВАЛЕНТИНА”
-					h1 Оказываем услуги сиделок для ухода за лежачими больными и пожилыми людьм
+					h1 Оказываем услуги сиделок для ухода<br> за лежачими больными и пожилыми людьм
 				.hero_main_btn 
 					button(type="button") Оставить заявку
 	section.company 
@@ -85,12 +85,13 @@ block content_block
 				.price_head 
 					h2 Оценим стоимость услуги индивидуально для вас
 				.price_form_w
-					form.price_form
-						.price_form_input
-							input(type="text" placeholder="Имя")
-						.price_form_input
-							input(type="tel" placeholder="+7 (___) ___-__-__")
-						.pricr_form_btn 
+					.price_form_main
+						form.price_form
+							.price_form_input
+								input(type="text" placeholder="Имя")
+							.price_form_input
+								input(type="tel" placeholder="+7 (___) ___-__-__")
+						.price_form_btn 
 							button(type='submit') Отправить заявку
 				.price_policy!='Отправляя форму, вы соглашаетесь на обработку персональных данных и принимаете <a href="#"> политику конфиденциальности</a>'
 	section.personal 
