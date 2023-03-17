@@ -253,7 +253,7 @@
 		margin-right: 3rem;
 		@include app;
 		background: $white;
-		padding: 2.7rem;
+		padding: 2.7rem 0 2.6rem 3rem;
 		border-radius: 1rem;
 	}
 	@include bp($point_2) {
@@ -271,7 +271,7 @@
 	button {
 		background: $orange;
 		color: $white;
-		padding: 2.7rem 5rem 	;
+		padding: 2.5rem 4.4rem 2.5rem	4.6rem;
 		border-radius: 1rem;
 		font-size: 1.8rem;
 	}
@@ -303,8 +303,8 @@
 	}
 	@include bp($point_2) {
 		margin-bottom: 6rem;
+		justify-content: flex-start;
 	}
-	justify-content: flex-start;
 }
 .personal_slider_w {
 }
@@ -326,13 +326,16 @@
 .personal_slide_txt {
 	p {
 		font-family: $font_3;
+		margin-bottom: .5rem;
 	}
 }
 .swiper_pagination {
 	display: flex;
 	justify-content: center;
+}
+.swiper-pagination-bullet-active {
 	span {
-		background: $orange;
+		color: $orange;
 	}
 }
 .personal_slider_nav {
@@ -348,6 +351,7 @@
 		border: .1rem solid #B7B7B7;
 		border-radius: 2rem;
 		padding: .5rem .8rem;
+		color: #B7B7B7;
 	}
 }
 .icon-previous {
@@ -360,6 +364,7 @@
 		border: .1rem solid #B7B7B7;
 		border-radius: 2rem;
 		padding: .5rem .8rem;
+		color: #B7B7B7;
 	}
 }
 .icon-next {
@@ -552,6 +557,7 @@
 		border: .1rem solid #B7B7B7;
 		border-radius: 2rem;
 		padding: .5rem .8rem;
+		color: #B7B7B7;
 	}
 }
 .reviews_slider_btn_next {
@@ -563,6 +569,7 @@
 		border: .1rem solid #B7B7B7;
 		border-radius: 2rem;
 		padding: .5rem .8rem;
+		color: #B7B7B7;
 	}
 }
 .swiper-button-disabled {
@@ -604,6 +611,7 @@
 	p {
 		margin-right: 2rem;
 		color: $orange;
+		font-family: $font_3;
 	}
 	a {
 		font-family: $font_2;
@@ -624,6 +632,7 @@
 	p {
 		margin-right: 2rem;
 		color: $orange;
+		font-family: $font_3;
 	}
 	a {
 		font-family: $font_2;
@@ -637,16 +646,18 @@
 	margin-right: .5rem;
 	color: $orange;
 }
-.contact_whatsapp {
+.contact_whatsapp_w{
+	display: flex;
+	justify-content: flex-start;
 	a {
-		display: flex;
-		align-items: center;
 		color: $blue;
 		font-family: $font_3;
-		&:hover {
-			color: $orange;
-		}
 	}
+}
+.contact_whatsapp {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 .icon-whatsapp {
 	margin-right: .5rem;
