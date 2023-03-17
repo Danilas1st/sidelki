@@ -222,6 +222,9 @@
 	h2 {
 		color: $white;
 	}
+	@include bp($point_5) {
+		margin-bottom: 3rem;
+	}
 }
 .price_form_w {
 	display: flex;
@@ -246,6 +249,9 @@
 	}
 	@include bp($point_5) {
 		margin: 0 0 1rem 0;
+		input {
+			margin: 0;
+		}
 	}
 }
 .pricr_form_btn {
@@ -384,6 +390,9 @@
 			font-size: 3rem;
 		}
 	}
+	@include bp($point_5) {
+		font-size: 2rem;
+	}
 }
 .live-now_left {
 	position: absolute;
@@ -412,6 +421,9 @@
 	span {
 		font-size: 1.6rem;
 	}
+	@include bp($point_5) {
+		font-size: 1.4rem;
+	}
 }
 .live-now_left_bottom {
 	background: $white;
@@ -425,6 +437,9 @@
 	}
 	@include bp($point_2) {
 		padding: 2rem;
+	}
+	@include bp($point_5) {
+		font-size: 1.4rem;
 	}
 }
 .live-now_left_bottom_txt {
@@ -484,6 +499,9 @@
 }
 .reviews_slide_img {
 	margin-right: 6.8rem;
+	@include bp($point_5) {
+		display: none;
+	}
 }
 .reviews_slide_txt {
 	max-width: 75rem;
@@ -493,6 +511,11 @@
 	h4 {
 		font-size: 1.6rem;
 		color: $black;
+	}
+	@include bp($point_5) {
+		p {
+			font-size: 1.4rem;
+		}
 	}
 }
 .reviews_slider_nav {
@@ -534,6 +557,9 @@
 	padding: 7.54rem 0;
 	@include bp($point_2) {
 		padding: 6rem 0;
+	}
+	@include bp($point_5) {
+		padding: 4rem 0;
 	}
 }
 .contact_head {
