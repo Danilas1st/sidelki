@@ -410,9 +410,13 @@
 .live-now_left {
 	position: absolute;
 	top: 4rem;
-	left: -1rem;
+	left: 8rem;
 	@include bp($point_2) {
 		position: relative;
+		left: 0;
+	}
+	@include bp($point_5) {
+		left: 0;
 	}
 }
 .live-now_left_top {
@@ -657,4 +661,8 @@
 	}
 }
 .contact_main_img {
+	height: 38.1rem;
+	img {
+		height: 100%;
+	}
 }
